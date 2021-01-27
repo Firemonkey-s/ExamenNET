@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebAppGarage.Models.CamionViewModel>
+
+@{
+    ViewData["Title"] = "Liste des camions";
+}
+
+<h1>Liste des camions</h1>
+
+<p>
+    <a class="btn btn-danger" asp-action="Create">Créer une fiche camion</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proprietaire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Immatriculation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modele)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprietaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Immatriculation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modele)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-success" })
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-warning" })
+              </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<script type="text/javascript">
+    function GetSelectedRow(this) { this.innerhtml = "TOTO" }
+    
+</script>
+
+

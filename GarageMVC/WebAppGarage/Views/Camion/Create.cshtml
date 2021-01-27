@@ -1,0 +1,62 @@
+﻿@model WebAppGarage.Models.CamionViewModel
+
+@{
+    ViewData["Title"] = "Créer camion";
+}
+
+<h1>Création de la fiche camion</h1>
+<h4>Veuillez rentrer les informations du camion et le nom de son propriétaire</h4>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Proprietaire" class="control-label"></label>
+                <input asp-for="Proprietaire" class="form-control" />
+                <span asp-validation-for="Proprietaire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Immatriculation" class="control-label"></label>
+                <input asp-for="Immatriculation" class="form-control" />
+                <span asp-validation-for="Immatriculation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carburant" class="control-label"></label>
+                <select asp-for="Carburant" class="form-control">
+                    <option value="0">Essence</option>
+                    <option value="1">Diesel</option>
+                    <option value="2">GPL</option>
+                </select>
+                <span asp-validation-for="Carburant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marque" class="control-label"></label>
+                <input asp-for="Marque" class="form-control" />
+                <span asp-validation-for="Marque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modele" class="control-label"></label>
+                <input asp-for="Modele" class="form-control" />
+                <span asp-validation-for="Modele" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Capacite" class="control-label"></label>
+                <input asp-for="Capacite" class="form-control" />
+                <span asp-validation-for="Capacite" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Retour à la liste</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

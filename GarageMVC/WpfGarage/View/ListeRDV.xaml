@@ -1,0 +1,59 @@
+﻿<Window x:Class="WpfGarage.View.ListeRDV"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfGarage.View"
+        mc:Ignorable="d"
+        Title="ListeRDV" Height="450" Width="800">
+    <StackPanel Margin="0,0,0,0" >
+        <Grid Height="80">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column ="0" Margin="0 0 10 0" Click="Button_Add_Work">Ajout Travaux</Button>
+            <Button Grid.Column ="1" Margin="0 0 10 0" Click="Button_VisualiserTravaux">Visualiser travaux</Button>
+            <Button Grid.Column="2" Click="Button_Close">Quitter</Button>
+
+        </Grid>
+        <TextBlock FontWeight="Bold" Margin="0 10">Pulse Porperties</TextBlock>
+        <TextBlock >Description</TextBlock>
+        <TextBox Height="20"></TextBox>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="0 0 10 0">
+                <TextBlock >Status</TextBlock>
+                <TextBox Height="20"></TextBox>
+            </StackPanel>
+            <StackPanel Grid.Column="1">
+                <TextBlock >Status</TextBlock>
+                <TextBox Height="20"></TextBox>
+            </StackPanel>
+        </Grid>
+        <DataGrid Margin="0,0,0,0" VerticalAlignment="Top"   
+    Height="500" HorizontalAlignment="Stretch"   
+    HorizontalContentAlignment="Stretch"   
+    ColumnWidth="*" Name="McDataGrid"   
+>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="LightGreen" />
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="Green"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
+        </DataGrid>
+
+    </StackPanel>
+</Window>

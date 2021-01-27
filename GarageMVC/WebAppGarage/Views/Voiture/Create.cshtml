@@ -1,0 +1,50 @@
+﻿@model WebAppGarage.Models.VoitureViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Création</h1>
+
+<h4>Créer fiche voiture</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Proprietaire" class="control-label"></label>
+                <input asp-for="Proprietaire" class="form-control" />
+                <span asp-validation-for="Proprietaire" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Immatriculation" class="control-label"></label>
+                <input asp-for="Immatriculation" class="form-control" />
+                <span asp-validation-for="Immatriculation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marque" class="control-label"></label>
+                <input asp-for="Marque" class="form-control" />
+                <span asp-validation-for="Marque" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modele" class="control-label"></label>
+                <input asp-for="Modele" class="form-control" />
+                <span asp-validation-for="Modele" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carburant" class="control-label"></label>
+                <input asp-for="Carburant" class="form-control" />
+                <span asp-validation-for="Carburant" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-action="Index">Retour à la liste</a>
+</div>
+

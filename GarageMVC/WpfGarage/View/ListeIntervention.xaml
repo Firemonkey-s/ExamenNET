@@ -1,0 +1,23 @@
+﻿<Window x:Class="WpfGarage.View.ListeIntervention"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfGarage.View"
+        mc:Ignorable="d"
+        Title="ListeIntervention" Height="450" Width="800">
+    <StackPanel Margin="0,0,0,0" >
+        <Grid Height="80">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column ="0" Margin="0 0 10 0" Click="Button_Ajout" >Ajout Intervention</Button>
+            <Button Grid.Column ="1" Margin="0 0 10 0" Click="Button_Modifier">Modifier Interventio</Button>
+            <Button Grid.Column="2" Click="Button_Close">Quitter</Button>
+
+        </Grid>
+    </StackPanel>
+</Window>

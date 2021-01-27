@@ -1,0 +1,79 @@
+﻿@model IEnumerable<WebAppGarage.Models.ReservationViewModel>
+
+@{
+    ViewData["Title"] = "Liste des RDV";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class= "btn btn-danger" asp-action="Create">Créer RDV</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DateReservation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Operation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.OpLibelle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Proprietaire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.typeVehicule)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Immatriculation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marque)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modele)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            @*<td>
+            @Html.DisplayFor(modelItem => item.typeVehicule)
+        </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.DateReservation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Operation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OpLibelle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprietaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Immatriculation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marque)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modele)
+            </td>
+            <td>
+                @Html.ActionLink("Modifier", "Edit", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-success" })
+                @*   @Html.ActionLink("Détail", "Details", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-secondary" }) *@
+                @Html.ActionLink("Supprimer", "Delete", new { id = item.Id }, htmlAttributes: new { @class = "btn btn-warning" })
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
